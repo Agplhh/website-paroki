@@ -1,4 +1,48 @@
 .custom-navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 60px;
+}
+
+.logo-navbar {
+  width: 60px;
+  height: 60px;
+  max-width: 75px;
+  max-height: 75px;
+}
+
+.custom-nav-links .nav-link,
+.custom-nav-links .nav-item-custom .nav-link {
+  font-size: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (max-width: 991.98px) {
+  .custom-navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    min-height: 50px;
+  }
+
+
+
+  .custom-nav-links .nav-link,
+  .custom-nav-links .nav-item-custom .nav-link {
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.custom-navbar {
   background-color: #d1c0b3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0.5rem 0;
@@ -343,4 +387,26 @@
   a.text-warning:hover {
     text-decoration: underline;
   }
+
+  .carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  min-height: 200px; 
+  max-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-image {
+    min-height: 120px;
+  }
+}
+
 }

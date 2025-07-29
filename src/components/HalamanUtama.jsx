@@ -81,7 +81,10 @@ const HalamanUtama = () => {
   return (
     <div className="halaman-utama">
       <TopNavbar />
-      <CarouselSection />
+
+      <div className='mt-5'>
+        <CarouselSection />
+      </div>
 
       {/* Bagian Kegiatan Terbaru */}
       <Container className="my-5">
