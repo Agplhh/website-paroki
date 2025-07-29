@@ -87,7 +87,7 @@ const HalamanUtama = () => {
       </div>
 
       {/* Bagian Kegiatan Terbaru */}
-      <Container className="my-5">
+      <Container >
         <h2 className="text-center mb-4">Kegiatan Terbaru</h2>
         <Row>
           {loading ? (
