@@ -8,7 +8,7 @@ const VisiMisiParoki = () => {
   return (
     <div className="visimisi-paroki-page">
       <TopNavbar />
-
+      {/* Main content area for Visi Misi Paroki */}
       <Container className="visimisi-content-wrapper my-5 p-4 p-md-5">
         <h1 className="visimisi-title text-center mb-5">PAROKI SANTO MARTINUS BALAI BERKUAK</h1>
 
