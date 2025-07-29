@@ -145,7 +145,7 @@ const HalamanUtama = () => {
           )}
         </Row>
         {kegiatan.length > 0 && ( 
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 mb-5">
             <a href="/kegiatan" className="btn btn-secondary">
               Lihat Semua Kegiatan
             </a>
