@@ -1,14 +1,15 @@
-// src/pages/BalaiPinangHulu.jsx
 import React from 'react';
-import DaftarStasi from '../components/DaftarStasi'; // Sesuaikan path jika berbeda dari root Anda
-import TopNavbar from '../components/TopNavbar'; // Asumsikan TopNavbar ada di sini
-import BottomContent from '../components/BottomContent'; // Asumsikan BottomContent ada di sini
+import DaftarStasi from '../components/DaftarStasi'; 
+import TopNavbar from '../components/TopNavbar'; 
+import BottomContent from '../components/BottomContent'; 
 
 const BalaiPinangHulu = () => {
   return (
     <>
       <TopNavbar />
-      {/* collectionName harus sama persis dengan nama koleksi di Firestore Anda */}
+       <div className="mt-5">
+        <h2 className="text-center mb-4">Informasi Stasi Balai Pinang Hulu</h2>
+      </div>
       <DaftarStasi collectionName="BalaiPinangHulu" />
       <BottomContent />
     </>

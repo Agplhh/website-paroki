@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './VisiMisiParoki.css'; // Buat file CSS terpisah untuk layout page ini
+import './VisiMisiParoki.css';
 import TopNavbar from './TopNavbar';
 import BottomContent from './BottomContent';
 

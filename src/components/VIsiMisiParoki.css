@@ -1,20 +1,19 @@
-/* Gaya untuk halaman VisiMisiParoki */
 .visimisi-paroki-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #fcfcfc; /* Latar belakang halaman yang konsisten */
+  background-color: #fcfcfc;
   color: #333333;
 }
 
 .visimisi-content-wrapper {
-  max-width: 960px; /* Lebar konten utama */
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #ffffff; /* Latar belakang putih untuk area teks */
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Bayangan lembut */
-  font-family: 'Open Sans', sans-serif; /* Font default untuk konten */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .visimisi-title {
@@ -22,17 +21,17 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 2.5rem; /* Jarak bawah lebih besar */
+  margin-bottom: 2.5rem;
 }
 
 .visimisi-section {
-  padding-bottom: 1.5rem; /* Padding bawah untuk setiap bagian Visi, Misi, dll. */
-  border-bottom: 1px solid #eee; /* Garis pemisah tipis */
-  margin-bottom: 1.5rem; /* Jarak bawah antar section */
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
 }
 
 .visimisi-section:last-child {
-  border-bottom: none; /* Hapus garis pemisah di bagian terakhir */
+  border-bottom: none;
 }
 
 .section-heading {
@@ -40,20 +39,19 @@
   font-size: 1.8rem;
   font-weight: 600;
   color: #555555;
-  margin-bottom: 0.5rem; /* Jarak antara heading dan teks */
+  margin-bottom: 0.5rem;
 }
 
 .section-text {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #444444;
-  margin-bottom: 0; /* Hapus margin default paragraf Bootstrap */
-  padding-left: 1rem; /* Sedikit indentasi untuk teks di kolom md-9 */
-  border-left: 3px solid #e6dace; /* Garis vertikal sebagai penekanan */
+  margin-bottom: 0;
+  padding-left: 1rem;
+  border-left: 3px solid #e6dace;
 }
 
-/* Responsivitas */
-@media (max-width: 767.98px) { /* Untuk mobile */
+@media (max-width: 767.98px) {
   .visimisi-content-wrapper {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
@@ -64,35 +62,35 @@
   }
   .section-heading {
     font-size: 1.5rem;
-    text-align: center !important; /* Rata tengah di mobile */
+    text-align: center !important;
     margin-bottom: 1rem;
     padding-right: 0 !important;
   }
   .section-text {
     font-size: 1rem;
-    text-align: center !important; /* Rata tengah di mobile */
-    padding-left: 0; /* Hapus indentasi */
-    border-left: none; /* Hapus garis vertikal */
-    padding-top: 0.5rem; /* Sedikit padding atas */
+    text-align: center !important;
+    padding-left: 0;
+    border-left: none;
+    padding-top: 0.5rem;
   }
   .visimisi-section {
-    flex-direction: column; /* Ubah tata letak menjadi kolom */
-    align-items: center !important; /* Rata tengah item di mobile */
+    flex-direction: column;
+    align-items: center !important;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) { /* Untuk tablet */
-    .visimisi-content-wrapper {
-        padding: 2.5rem;
-        margin: 2.5rem auto;
-    }
-    .visimisi-title {
-        font-size: 2.5rem;
-    }
-    .section-heading {
-        font-size: 1.6rem;
-    }
-    .section-text {
-        font-size: 1.05rem;
-    }
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .visimisi-content-wrapper {
+    padding: 2.5rem;
+    margin: 2.5rem auto;
+  }
+  .visimisi-title {
+    font-size: 2.5rem;
+  }
+  .section-heading {
+    font-size: 1.6rem;
+  }
+  .section-text {
+    font-size: 1.05rem;
+  }
 }

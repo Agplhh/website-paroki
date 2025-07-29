@@ -1,57 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase-config'; 
+import { db } from '../firebase-config';
 import { collection, query, getDocs, limit } from 'firebase/firestore';
-import { Container, Row, Col, Card, Spinner, Alert } from 'react-bootstrap';
-import './DaftarStasi.css'; 
+import { Container, Row, Col, Card, Spinner, Alert, Carousel } from 'react-bootstrap';
+import './HalamanUtama.css';
 
 const DaftarStasi = ({ collectionName }) => {
   const [stasiData, setStasiData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const getImageUrl = (url, altText = 'Gambar') => {
+    if (!url) {
+      console.warn(`URL gambar kosong atau null. Menggunakan placeholder untuk: ${altText}`);
+      return 'placeholder.jpg';
+    }
+    const convertedUrl = url.replace('https://drive.google.com/uc?export=view&id=', 'https://lh3.googleusercontent.com/d/');
+    return convertedUrl;
+  };
+
   useEffect(() => {
-    const getStasiData = async () => {
+    const fetchStasiData = async () => {
       setLoading(true);
       setError(null);
+
       try {
         if (!collectionName) {
-          setError("Nama koleksi tidak diberikan untuk DaftarStasi.");
+          setStasiData([]);
           setLoading(false);
           return;
         }
 
         const stasiRef = collection(db, collectionName);
         const q = query(stasiRef, limit(10));
-
         const querySnapshot = await getDocs(q);
-        const data = [];
-        querySnapshot.forEach((doc) => {
-          data.push({ id: doc.id, ...doc.data() });
-        });
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
         setStasiData(data);
       } catch (err) {
-        console.error("Error fetching stasi data for", collectionName, ": ", err);
-        setError(`Gagal memuat data stasi "${collectionName}". Silakan coba lagi. (${err.message})`);
+        console.error("Error fetching stasi data: ", err);
+        setError("Gagal memuat data stasi. Silakan coba lagi nanti.");
       } finally {
         setLoading(false);
       }
     };
 
-    getStasiData();
+    fetchStasiData();
   }, [collectionName]);
-
-  const formatGoogleDriveUrl = (url) => {
-    if (url && url.includes('drive.google.com/uc?export=view&id=')) {
-      return url.replace('https://drive.google.com/uc?export=view&id=', 'https://drive.google.com/thumbnail?id=');
-    }
-    return url;
-  };
 
   if (loading) {
     return (
-      <Container className="d-flex justify-content-center align-items-center stasi-loading-spinner" style={{ minHeight: '50vh' }}>
+      <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '50vh' }}>
         <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
+          <span className="visually-hidden">Memuat...</span>
         </Spinner>
       </Container>
     );
@@ -60,7 +62,7 @@ const DaftarStasi = ({ collectionName }) => {
   if (error) {
     return (
       <Container className="my-5">
-        <Alert variant="danger">{error}</Alert>
+        <Alert variant="danger" className="text-center">{error}</Alert>
       </Container>
     );
   }
@@ -68,57 +70,76 @@ const DaftarStasi = ({ collectionName }) => {
   if (stasiData.length === 0) {
     return (
       <Container className="my-5">
-        <Alert variant="info">Tidak ada data untuk stasi "{collectionName}". Pastikan koleksi ada dan berisi dokumen.</Alert>
+        <Alert variant="info" className="text-center">
+          Tidak ada data yang tersedia untuk stasi "{collectionName}".
+        </Alert>
       </Container>
     );
   }
 
   return (
-    <Container className="stasi-list-container my-5">
-      <h2 className="stasi-list-title text-center mb-5">Informasi Stasi {stasiData[0]?.nama?.split(' ')[1] || collectionName}</h2>
-      <Row className="justify-content-center g-4"> 
+    <Container className="my-5">
+      <Row className="justify-content-center">
         {stasiData.map((data) => (
-          <Col key={data.id} xs={12} md={6} lg={4}> 
-            <Card className="stasi-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+          <Col md={6} lg={4} className="mb-4" key={data.id}>
+            <Card className="shadow-sm h-100 d-flex flex-column">
               {data.foto && data.foto.length > 0 ? (
-                <div className="stasi-card-img-wrapper">
+                data.foto.length > 1 ? (
+                  <Carousel indicators={true} controls={true} interval={null}>
+                    {data.foto.map((fotoUrl, index) => (
+                      <Carousel.Item key={index}>
+                        <img
+                          className="d-block w-100"
+                          src={getImageUrl(fotoUrl, `Foto ${data.nama || 'Stasi'} ${index + 1}`)}
+                          alt={`Foto ${data.nama || 'Stasi'} ${index + 1}`}
+                          style={{ height: '200px', objectFit: 'cover' }}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = 'placeholder.jpg';
+                            console.error(`Gagal memuat gambar: ${e.target.src}`);
+                          }}
+                        />
+                      </Carousel.Item>
+                    ))}
+                  </Carousel>
+                ) : (
                   <Card.Img
                     variant="top"
-                    src={formatGoogleDriveUrl(data.foto[0])}
-                    alt={`Foto ${data.nama}`}
-                    className="stasi-card-main-img"
+                    src={getImageUrl(data.foto[0], `Foto ${data.nama || 'Stasi'}`)}
+                    alt={`Foto ${data.nama || 'Stasi'}`}
+                    style={{ height: '200px', objectFit: 'cover' }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'placeholder.jpg';
+                      console.error(`Gagal memuat gambar: ${e.target.src}`);
+                    }}
                   />
-                </div>
+                )
               ) : (
-                <div className="stasi-card-img-placeholder d-flex align-items-center justify-content-center">
-                  <span className="text-muted">Tidak Ada Foto</span>
-                </div>
+                <Card.Img
+                  variant="top"
+                  src="placeholder.jpg"
+                  alt="Tidak Ada Foto"
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
               )}
-              <Card.Body className="d-flex flex-column p-4">
-                <Card.Title className="stasi-card-title text-center mb-3">
+
+              <Card.Body className="d-flex flex-column">
+                <Card.Title className="mb-2">
                   {data.nama || 'Nama Stasi Tidak Tersedia'}
                 </Card.Title>
-                <div className="stasi-card-details flex-grow-1">
-                  <p><strong>Alamat:</strong> {data.alamat || 'Tidak Tersedia'}</p>
-                  <p><strong>Dominasi:</strong> {data.dominasi || 'Tidak Tersedia'}</p>
-                  <p><strong>Jumlah Umat:</strong> {data.jumlahUmat || 'Tidak Tersedia'}</p>
-                  <p><strong>Kapasitas:</strong> {data.kapasitas || 'Tidak Tersedia'}</p>
-                </div>
-                {data.foto && data.foto.slice(1).length > 0 && (
-                  <div className="stasi-card-gallery mt-3 pt-3 border-top text-center">
-                    <small className="text-muted d-block mb-2">Galeri Tambahan:</small>
-                    <div className="d-flex flex-wrap justify-content-center">
-                      {data.foto.slice(1).map((fotoUrl, index) => (
-                        <img
-                          key={index}
-                          src={formatGoogleDriveUrl(fotoUrl)}
-                          alt={`Foto ${data.nama} ${index + 2}`}
-                          className="stasi-card-thumbnail mx-1 my-1"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <Card.Text>
+                  <strong>Alamat:</strong> {data.alamat || 'Tidak Tersedia'}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Dominasi:</strong> {data.dominasi || 'Tidak Tersedia'}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Jumlah Umat:</strong> {data.jumlahUmat || 'Tidak Tersedia'}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Kapasitas:</strong> {data.kapasitas || 'Tidak Tersedia'}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

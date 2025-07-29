@@ -1,12 +1,11 @@
-/* Styling untuk Navbar (disertakan untuk kelengkapan, tidak berubah) */
 .custom-navbar {
-  background-color: #d1c0b3; /* Warna latar belakang navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
+  background-color: #d1c0b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0.5rem 0;
 }
 
 .logo-navbar {
-  margin-right: 15px; /* Jarak antara logo dan teks */
+  margin-right: 15px;
 }
 
 .navbar-brand {
@@ -29,10 +28,9 @@
 
 .custom-nav-links .nav-link:hover,
 .custom-nav-links .nav-item-custom .dropdown-toggle:hover {
-  color: #007bff !important;
+  color: #707a83 !important;
 }
 
-/* Styling untuk Dropdown Navbar */
 .custom-nav-links .nav-item-custom .dropdown-menu {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -51,36 +49,32 @@
   color: #007bff !important;
 }
 
-/* Styling untuk Carousel */
 .carousel-wrapper {
   margin-top: 0px;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  /* --- PERUBAHAN UTAMA DI SINI --- */
-  width: 1920px; /* <--- Lebar tetap 1920px */
-  height: 450px; /* <--- Tinggi tetap 450px */
-  margin: 0 auto; /* <--- Pusatkan carousel di tengah layar */
+  width: 1920px;
+  height: 450px;
+  margin: 0 auto;
 }
 
-/* Pastikan semua elemen Bootstrap di dalam carousel juga mengikuti ukuran */
 .carousel .carousel-inner,
 .carousel .carousel-item {
-  width: 100%; /* Agar mengisi penuh carousel-wrapper */
-  height: 100%; /* Agar mengisi penuh carousel-wrapper */
-  max-height: 450px; /* Batasi tinggi item carousel */
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
   overflow: hidden;
 }
 
 .carousel-image {
-  width: 100%; /* Mengisi penuh lebar carousel-item */
-  height: 100%; /* Mengisi penuh tinggi carousel-item */
-  object-fit: cover; /* Pastikan ini COVER agar gambar tidak ada bar hitam dan mengisi penuh */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: brightness(90%);
   display: block;
 }
 
-/* Indikator Carousel */
 .carousel-indicators [data-bs-target] {
   width: 10px;
   height: 10px;
@@ -97,7 +91,6 @@
   background-color: #007bff;
 }
 
-/* Kontrol Carousel (panah kiri/kanan) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.4);
@@ -106,12 +99,11 @@
   font-size: 1.5rem;
 }
 
-/* Styling untuk slide review (jika digunakan) */
 .carousel-review-slide {
   background-color: #f1f1f1;
-  width: 100%; /* Mengisi penuh lebar carousel-item */
-  height: 100%; /* Mengisi penuh tinggi carousel-item */
-  max-height: 450px; /* Batasi tinggi */
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +141,6 @@
   color: #777777;
 }
 
-/* Styling untuk Footer (disertakan untuk kelengkapan, tidak berubah) */
 .footer-section {
   background-color: #e9dcd2;
   color: #5a4b40;
@@ -203,26 +194,6 @@
   }
 }
 
-.download-button {
-  background-color: #8c6e5e;
-  border-color: #8c6e5e;
-  color: #ffffff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.download-button:hover {
-  background-color: #a3877a;
-  border-color: #a3877a;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Styling untuk Copyright Section */
 .copyright-section {
   background-color: #d1c0b3;
   color: #4a3c30;
@@ -235,19 +206,16 @@
   opacity: 0.85;
 }
 
-
-/* Responsivitas Umum */
 @media (max-width: 991.98px) {
-  /* Di layar yang lebih kecil, carousel akan kembali responsif agar tidak meluber */
   .carousel-wrapper {
-    width: 100%; /* Kembali ke lebar penuh layar */
-    height: auto; /* Tinggi menyesuaikan secara proporsional */
-    margin: 0; /* Hapus margin auto */
+    width: 100%;
+    height: auto;
+    margin: 0;
   }
 
   .carousel .carousel-inner,
   .carousel .carousel-item {
-    height: 300px; /* <--- Tinggi carousel di tablet/layar menengah */
+    height: 300px;
     max-height: 300px;
   }
 
@@ -265,10 +233,12 @@
     padding-left: 15px;
     padding-right: 15px;
   }
+
   .navbar-toggler {
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
   }
+
   .navbar-collapse {
     background-color: #f8f9fa;
     padding: 1rem;
@@ -276,26 +246,32 @@
     margin-top: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
+
   .custom-nav-links .nav-link,
   .custom-nav-links .nav-item-custom .dropdown-toggle,
   .custom-nav-links .nav-item-custom .dropdown-item {
     text-align: center;
     padding: 0.75rem 1rem;
   }
+
   .custom-nav-links .nav-item-custom .dropdown-menu {
     text-align: center;
     width: 100%;
     margin-top: 5px;
   }
+
   .footer-section {
     text-align: center;
   }
+
   .footer-section .col-md-4 {
     align-items: center !important;
   }
+
   .footer-akses-umat-col {
     align-items: center !important;
   }
+
   .footer-address-text {
     margin-left: auto;
     margin-right: auto;
@@ -303,44 +279,68 @@
 }
 
 @media (max-width: 767.98px) {
-  /* Di layar mobile, carousel akan menjadi lebih pendek */
   .carousel .carousel-inner,
   .carousel .carousel-item {
-    height: 200px; /* <--- Tinggi carousel di mobile */
+    height: 200px;
     max-height: 200px;
   }
+
   .carousel-image {
     height: 200px;
     max-height: 200px;
   }
+
   .carousel-review-slide {
     height: 200px;
     max-height: 200px;
-    padding: 20px; /* Kurangi padding di mobile */
+    padding: 20px;
   }
+
   .review-heading {
-    font-size: 1.5rem; /* Ukuran font lebih kecil di mobile */
+    font-size: 1.5rem;
   }
+
   .review-quotation {
     font-size: 0.9rem;
   }
+
   .reviewer-signature {
     font-size: 0.8rem;
   }
+
   .footer-heading {
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+
   .footer-schedule-label {
     font-size: 0.95rem;
   }
+
   .footer-schedule-text {
     font-size: 0.85rem;
     margin-bottom: 0.7rem;
   }
+
   .download-button {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
-  
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  a.text-warning {
+    text-decoration: none;
+  }
+
+  a.text-warning:hover {
+    text-decoration: underline;
+  }
 }

@@ -7,14 +7,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBvlrrfkfcvKV4ODMo4E9yNByN0Gc-mLeI",
-  authDomain: "website-parokibalai.firebaseapp.com",
-  projectId: "website-parokibalai",
-  storageBucket: "website-parokibalai.firebasestorage.app",
-  messagingSenderId: "605416157105",
-  appId: "1:605416157105:web:7b35b5ffe8f399a8369790"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

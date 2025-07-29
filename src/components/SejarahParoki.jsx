@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import './SejarahParoki.css'; // Kita akan membuat file CSS terpisah untuk layout page ini
-import TopNavbar from './TopNavbar'; // Asumsi TopNavbar akan selalu ada di semua halaman
-import BottomContent from './BottomContent'; // Asumsi BottomContent (footer) juga akan selalu ada
+import './SejarahParoki.css'; 
+import TopNavbar from './TopNavbar'; 
+import BottomContent from './BottomContent'; 
 
 const SejarahParoki = () => {
   return (
     <div className="sejarah-paroki-page">
-      <TopNavbar /> {/* Menampilkan navbar di bagian atas */}
+      <TopNavbar />
 
       <Container className="sejarah-content-wrapper my-5 p-4 p-md-5">
         <h1 className="sejarah-title text-center mb-4">Sejarah Misi Katolik di Keuskupan Ketapang</h1>
@@ -50,7 +50,7 @@ const SejarahParoki = () => {
         </div>
       </Container>
 
-      <BottomContent /> {/* Menampilkan footer di bagian bawah */}
+      <BottomContent /> 
     </div>
   );
 };

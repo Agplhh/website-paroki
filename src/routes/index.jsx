@@ -14,6 +14,18 @@ import Marawa from "../pages/Marawa";
 import SekucingLabar from "../pages/SekucingLabar";
 import LabaiHilir from "../pages/LabaiHilir";
 
+import DoaLiturgi from "../components/DoaLiturgi";
+import Sakramen from "../components/Sakramen"; 
+
+import PetaParoki from "../pages/PetaParoki";
+import MasterPlan from "../pages/MasterPlan";
+
+import HalamanDetailKegiatan from "../components/HalamanDetailKegiatan";
+
+import Dpp from "../components/Dpp"; 
+
+import Kegiatan from "../components/Kegiatan"; 
+
 const router = createBrowserRouter([ 
     {
         path: "/",
@@ -54,6 +66,34 @@ const router = createBrowserRouter([
     {
         path: "/wilayah-pusat",
         element: <WilayahPusat />,
+    },
+    {
+        path: "/doa-liturgi",
+        element: <DoaLiturgi />,
+    },
+    {
+        path: "/sakramen",
+        element: <Sakramen />,
+    },
+    {
+        path: "/peta-paroki",
+        element: <PetaParoki />,
+    },
+    {
+        path: "/master-plan",
+        element: <MasterPlan />,
+    },
+    {
+        path: "/dpp",
+        element: <Dpp />,
+    },
+    {
+        path: "/kegiatan/:id",
+        element: <HalamanDetailKegiatan />,
+    },
+    {
+        path: "/kegiatan",
+        element: <Kegiatan />,
     }
 ]);
 

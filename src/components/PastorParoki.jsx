@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import './PastorParoki.css'; // Pastikan ini mengarah ke CSS yang akan kita ubah
+import './PastorParoki.css'; 
 import TopNavbar from './TopNavbar';
 import BottomContent from './BottomContent';
 
@@ -10,21 +10,21 @@ const PastorParoki = () => {
       id: 1,
       name: 'RD Cyrilus Ndora',
       title: 'Pastor Kepala Paroki',
-      imageUrl: 'images/RomoCr.png', // Pastikan path ini benar di folder public/images/
+      imageUrl: 'images/RomoCr.png', 
       description: 'Melayani sebagai gembala utama Paroki Santo Martinus Balai Berkuak, bertanggung jawab atas arah pastoral dan spiritual umat.'
     },
     {
       id: 2,
       name: 'RD. Thomas Sunarto',
-      title: 'Pastor Rekan / Asisten Pelayanan Sakramental',
-      imageUrl: 'images/RomoNarto.png', // Pastikan path ini benar di folder public/images/
+      title: 'Pastor Rekan ',
+      imageUrl: 'images/RomoNarto.png', 
       description: 'Mendukung Pastor Kepala Paroki dalam berbagai kegiatan pastoral dan pelayanan sakramental kepada umat.'
     },
     {
       id: 3,
       name: 'RD. Yosafat Elly Dhita Karunia',
-      title: 'Pastor Rekan / Koordinator Kategorial',
-      imageUrl: 'images/RomoDhita.png', // Pastikan path ini benar di folder public/images/
+      title: 'Pastor Rekan ',
+      imageUrl: 'images/RomoDhita.png', 
       description: 'Bertugas mengkoordinasi kegiatan kelompok kategorial dan mengembangkan spiritualitas komunitas di paroki.'
     },
   ];

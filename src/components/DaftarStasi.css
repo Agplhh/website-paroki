@@ -1,6 +1,6 @@
 .stasi-list-container {
   padding: 20px;
-  background-color: #f8f9fa; /* Warna latar belakang lembut */
+  background-color: #f8f9fa;
   border-radius: 10px;
 }
 
@@ -15,34 +15,34 @@
 .stasi-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border: none;
-  border-radius: 0.75rem !important; /* Sudut lebih membulat untuk tampilan modern */
-  overflow: hidden; /* Penting agar konten (terutama gambar) tidak melampaui border-radius */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Bayangan halus */
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .stasi-card:hover {
-  transform: translateY(-5px); /* Efek melayang saat hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bayangan lebih kuat saat hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .stasi-card-img-wrapper {
   width: 100%;
-  height: 280px; /* Tinggi tetap untuk gambar utama */
-  overflow: hidden; /* Potong bagian gambar yang melampaui */
+  height: 280px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e9ecef; /* Warna latar belakang placeholder */
+  background-color: #e9ecef;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
 }
 
 .stasi-card-main-img {
   width: 100%;
-  height: 100%; /* Memenuhi tinggi pembungkus */
-  object-fit: cover; /* **PENTING**: Memastikan gambar mengisi area tanpa terdistorsi dan menjaga aspek rasio */
-  object-position: center; /* Memusatkan gambar */
-  transition: transform 0.5s ease; /* Transisi halus saat gambar dimuat atau diubah */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
 }
 
 .stasi-card-img-placeholder {
@@ -82,18 +82,18 @@
 }
 
 .stasi-card-thumbnail {
-  width: 70px; 
+  width: 70px;
   height: 70px;
-  object-fit: cover; 
-  border-radius: 8px; 
-  border: 1px solid #ced4da; 
-  margin: 5px; 
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  margin: 5px;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .stasi-card-thumbnail:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -124,7 +124,7 @@
   }
   .stasi-card-img-wrapper,
   .stasi-card-img-placeholder {
-    height: 200px; 
+    height: 200px;
   }
   .stasi-card-thumbnail {
     width: 50px;
