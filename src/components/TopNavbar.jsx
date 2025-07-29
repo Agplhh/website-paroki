@@ -27,13 +27,11 @@ const TopNavbar = () => {
             </NavDropdown>
 
             <NavDropdown title="Stasi - Stasi" id="stasi-stasi-dropdown" className="nav-item-custom">
-              {/* === PERUBAHAN UTAMA DI SINI === */}
               <NavDropdown.Item as={Link} to="/wilayah-pusat">Wilayah Pusat</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/balai-pinang-hulu">Balai Pinang Hulu</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/marawa">Merawa</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/sekucing-labar">Sekucing Labai</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/labai-hilir">Labai Hilir</NavDropdown.Item>
-              {/* === AKHIR PERUBAHAN === */}
             </NavDropdown>
 
             <NavDropdown title="Spiritualitas" id="spiritualitas-dropdown" className="nav-item-custom">
